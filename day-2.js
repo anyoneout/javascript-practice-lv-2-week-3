@@ -26,6 +26,23 @@ console.log(book.pages); // Output: 300
 // Add another method named `updateYear` that updates the `year` property.
 // Use `this` to access and modify the properties.
 
+const movie = {
+  title: "Big Trouble in Little China",
+  year: 1986,
+  watch() {
+    console.log(`You watched ${this.title}`)
+  },
+  updateYear(newYear){
+    this.year = newYear;
+  }
+};
+
+console.log("\nMovie Object with Methods");
+movie.watch();
+console.log(movie.year);
+movie.updateYear(2016);
+console.log(movie.year);
+
 
 // Example 2: Adding Methods to a Pet Object
 const pet = {
@@ -38,7 +55,7 @@ const pet = {
   },
   rename(newName) {
     this.name = newName;
-  }
+  },
 };
 
 console.log("\nExample 2: Pet Object with Methods");
@@ -50,6 +67,22 @@ console.log(pet.name);  // Output: Paws
 // Add a method named `addPopulation` that increases the `population` property by a given number.
 // Add another method named `rename` that updates the `name` property using `this`.
 
+const city = {
+  name: "New Orleans",
+  population: 369749,
+  addPopulation() {
+    this.population += 1000;
+    console.log(`${this.name} has a population of ${this.population}`)
+  },
+  rename (newName) {
+    this.city = newName;
+  }
+};
+
+console.log("\nCity Object with Methods");
+city.addPopulation();
+city.rename("Omaha");
+console.log(city.name);
 
 // Example 3: Adding Methods to a Car Object
 const car = {
@@ -72,6 +105,22 @@ console.log(car.year); // Output: 2023
 // TODO 3: Add a method to `computer` object
 // Add a method named `upgradeRAM` that updates the `ram` property.
 // Add another method named `describe` that logs a message with the `brand`, `processor`, and `ram` properties.
+
+const computer = {
+  brand: "Dell",
+  ram: 16,
+  processor: "Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz 3.19GHz",
+  upgradeRAM(newRam) {
+  this.ram = newRam;
+  },
+  describe() {
+  console.log(`This computer is a ${this.brand} with ${this.ram} gigs of RAM and a ${this.processor} processor.`)
+  }
+}
+
+console.log("\nComputer Object with Methods");
+computer.upgradeRAM(24);
+computer.describe();
 
 
  // Example 4: Adding Methods to a Product Object
@@ -98,6 +147,24 @@ console.log(product.inStock); // Output: false
 // Add a method named `changeRating` that updates the `rating` property.
 // Add another method named `reopen` that sets the `inStock` property to true.
 
+const restaurant = {
+  name: "House of Nanking",
+  rating: 4.2,
+  inStock: false,
+  changeRating(updatedRating){
+    this.rating = updatedRating
+    console.log(`New rating applied! New rating is ${this.rating}.`);
+  },
+  reopen(){
+    this.inStock = true;
+  }
+}
+
+console.log("\nExample Restaurant Object");
+restaurant.changeRating.apply(4.5);
+console.log(restaurant.rating);
+restaurant.reopen();
+console.log(restaurant.inStock);
 
 // Example 5: Adding Methods to a Student Object
 const student = {
@@ -121,3 +188,24 @@ console.log(student.fullName()); // Output: John Doe
 // Add a method named `renovate` that increases the `size` property by a given number.
 // Add another method named `changeAddress` that updates the `address` property.
 
+const house = {
+  address: "2530 Burgundy",
+  size: 1500,
+  hasGarage: true,
+  renovate(homeAddition) {
+    this.size += homeAddition;
+    console.log(`The house size is now ${this.size}.`);
+  },
+  changeAddress (newAddress) {
+    this.address = newAddress;
+  },
+  status() {
+    console.log(`This house located at ${house.address} and is ${house.size} sqft.`);
+  }
+}
+
+console.log("\nExample House Object with Methods");
+house.status();
+house.renovate(300);
+house.changeAddress("123 Boogie Woogie Avenue");
+house.status();
